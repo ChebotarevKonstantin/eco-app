@@ -23,7 +23,7 @@ import Glassglassbreak from "./components/Glass/Glassglassbreak";
 import Form from "./components/Form/Form";
 
 function App() {
-  const [data, setData] = React.useState("Not Found");
+  const [data, setData] = React.useState("Отсканируйте штрих-код");
 
   return (
     <div className="App">
@@ -87,7 +87,7 @@ function App() {
               if (result) setData(result.text);
             }}
           />
-          <p>{data}</p>
+          {/*<p>{data}</p>*/}
           <BlicStart />
           <Form data={data} />
         </Route>
