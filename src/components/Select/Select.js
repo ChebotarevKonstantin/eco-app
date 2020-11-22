@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import style from "./Select.module.css";
 
 export default function Select({ data }) {
   const [selectedMaterial, setSelectedMaterial] = useState("");
@@ -37,41 +38,45 @@ export default function Select({ data }) {
 
   return (
     <div>
-      <label>Material: </label>
-      <select
-        name="material"
-        id="material"
-        onChange={selectedMaterialHandler}
-        defaultValue={"DEFAULT"}
-      >
-        <option value="DEFAULT" disabled>
-          -- Материал --
-        </option>
-        <option value="glass">Стекло</option>
-        <option value="metal">Металл</option>
-        <option value="plastic">Пластик</option>
-        <option value="paper">Бумага</option>
-        <option value="rubber">Резина</option>
-      </select>
+      <div>
+        <select
+          name="material"
+          id={style.material}
+          onChange={selectedMaterialHandler}
+          defaultValue={"DEFAULT"}
+        >
+          <option value="DEFAULT" disabled>
+            -- Материал --
+          </option>
+          <option value="glass">Стекло</option>
+          <option value="metal">Металл</option>
+          <option value="plastic">Пластик</option>
+          <option value="paper">Бумага</option>
+          <option value="rubber">Резина</option>
+        </select>
+        <select
+          name="category"
+          id={style.category}
+          onChange={selectedCategoryHandler}
+          defaultValue={"DEFAULT"}
+        >
+          <option value="DEFAULT" disabled>
+            -- Категория --
+          </option>
+          <option value="bottle">Бутылка</option>
+          <option value="can">Банка</option>
+          <option value="box">Коробка/Упаковка</option>
+          <option value="canister">Канистра</option>
+          <option value="barrel">Бочка</option>
+        </select>
+      </div>
       <br />
-      <label>Category: </label>
-      <select
-        name="category"
-        id="category"
-        onChange={selectedCategoryHandler}
-        defaultValue={"DEFAULT"}
+      <button
+        type="button"
+        className="btn btn-success"
+        onClick={clickHandler}
+        style={{ marginBottom: "10px" }}
       >
-        <option value="DEFAULT" disabled>
-          -- Категория --
-        </option>
-        <option value="bottle">Бутылка</option>
-        <option value="can">Банка</option>
-        <option value="box">Коробка/Упаковка</option>
-        <option value="canister">Канистра</option>
-        <option value="barrel">Бочка</option>
-      </select>
-      <br />
-      <button type="button" className="btn btn-success" onClick={clickHandler}>
         Добавить
       </button>
     </div>
