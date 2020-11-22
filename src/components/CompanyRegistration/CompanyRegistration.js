@@ -11,6 +11,7 @@ export default function CompanyRegistration() {
   const metro = useRef();
   const link = useRef();
   const material = useRef();
+  const categories = useRef();
 
   
   // const [lat, setLat] = useState(null);
@@ -42,6 +43,7 @@ export default function CompanyRegistration() {
       modules: ["geoObject.addon.hint", "geoObject.addon.balloon"],
       link: link.current.value,
       materials: [material.current.value],
+      categories: [categories.current.value],
     };
     console.log(obj);
     try {
@@ -86,6 +88,18 @@ export default function CompanyRegistration() {
           <option value="paper">Бумага</option>
           <option value="rubber">Резина</option>
         </select>
+        
+        <select ref={categories}  name="categories" id="category" defaultValue={"DEFAULT"} >
+          <option value="DEFAULT" disabled>
+            -- Категории --
+          </option>
+          <option value="bottle">Бутылка</option>
+          <option value="can">Банка</option>
+          <option value="box">Коробка/Упаковка</option>
+          <option value="canister">Канистра</option>
+          <option value="barrel">Бочка</option>
+        </select>
+
         <div className="modal-footer">
           <button
             type="button"
