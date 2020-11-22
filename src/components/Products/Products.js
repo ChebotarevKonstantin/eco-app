@@ -8,7 +8,7 @@ function Products() {
     <div>
       <FindAdress props={props}/>
         <br/>
-      Мотивация + инфо о вреде неутилизированной шины.
+        <p4>Спасибо!</p4>
     </div>
   );
 }

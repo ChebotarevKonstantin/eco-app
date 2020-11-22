@@ -6,6 +6,8 @@ body {
   background-color: #20232a;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  margin: auto;
+  max-width: 1024px;
 }
 
 code {
@@ -39,4 +41,24 @@ button:active {
   background-color: #227685;
   box-shadow: #227685 0 0 20px;
   transform: translateY(2px);
+}
+.back-btn{
+  text-align: left;
+}
+.nav-btns{
+  display: flex;
+  flex-wrap: wrap;
+    justify-content: space-around;
+    width: 100%;
+}
+.nav-btns button{
+  width: 23%;
+  margin:  1%;
+}
+
+@media screen and (max-width: 600px){
+  .nav-btns button{
+      width: 100%;
+      margin: 1%;
+  }
 }

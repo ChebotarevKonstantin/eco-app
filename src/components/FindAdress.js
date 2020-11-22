@@ -8,7 +8,7 @@ import style from './FindAdress.module.css'
 
 function FindAdress(props) {
   const dispatch = useDispatch();
-  const adress = useSelector(store =>store.adress);
+  const addres = useSelector(store =>store.addres);
     useEffect(()=>{
     dispatch(featchFindAC(props.props))
   },[]);
@@ -16,23 +16,20 @@ function FindAdress(props) {
       const mapstate = { center: [59.9371, 30.3575], zoom: 9, width: '90%', height: '90%' };
   return (
     <div >
-      <button type="button" className="btn btn-primary btn-sm " onClick={()=> history.push('/blic')}>Назад</button>
+      <div className="back-btn"><button type="button" className="btn btn-primary btn-sm " onClick={()=> history.push('/blic')}>Назад</button></div>
       <br/>
-      Показываем на карте куда можно сдать.
-      {/* {adress && adress.map((item, i) => (<pre>{JSON.stringify(item, null, 2)}</pre>))} */}
+      Пункты приёма.
       <br/>
-      Мотивация из FindAdress.
-      
+      <br/>
       <div className={style.flexfind} >
       <YMaps>
         <Map state={mapstate}  >
-          {adress && adress.map((placemark, i)=> <Placemark key={placemark._id} {...placemark} />)}
+          {addres && addres.map((placemark, i)=> <Placemark key={placemark._id} {...placemark} />)}
           <ZoomControl />
         </Map>
       </YMaps>
      </div>
-  
-    </div>
+     </div>
   );
 }
 

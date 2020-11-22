@@ -2,7 +2,7 @@ import React from "react";
 import "./App.css";
 import BarcodeScannerComponent from "react-webcam-barcode-scanner";
 
-import { Route, Switch } from "react-router-dom";
+
 import Form from "./components/Form/Form";
 import CompanyRegistration from "./components/CompanyRegistration/CompanyRegistration";
 import "./components/CompanyRegistration/CompanyRegistration.css";
@@ -10,6 +10,7 @@ import "./components/CompanyRegistration/CompanyRegistration.css";
 import {Switch, Route} from 'react-router-dom'
 import BlicStart from '../src/components/BlicStart'
 import RouteCategory from "./components/RouteCategory";
+import AddButton from "./components/AddButton";
 
 
 function App() {
@@ -19,9 +20,9 @@ function App() {
 
   return (
     <div>
-      <button
+      {/* <button
         type="button"
-        className="btn btn-primary"
+        className="btn btn-primary plus-btn"
         data-toggle="modal"
         data-target="#exampleModalCenter"
       >
@@ -57,10 +58,11 @@ function App() {
             </div>
           </div>
         </div>
-      </div>
+      </div> */}
 
     <Switch>
        <Route exact path='/'>
+       <AddButton/>
            {/* <BarcodeScannerComponent
            width={500}
            height={500}
@@ -69,7 +71,9 @@ function App() {
            }}
            /> */}
            <p>{data}</p>
-           <BlicStart />
+          <Form data={data}/>
+          <BlicStart />
+
        </Route>
        <Route path='/'>
           <RouteCategory/>
