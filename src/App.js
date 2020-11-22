@@ -21,12 +21,62 @@ import Hazardouswaste from "./components/Hazardouswaste/Hazardouswaste";
 import Glasscontainer from "./components/Glass/Glasscontainer";
 import Glassglassbreak from "./components/Glass/Glassglassbreak";
 import Form from "./components/Form/Form";
+import CompanyRegistration from "./components/CompanyRegistration/CompanyRegistration";
+import "./components/CompanyRegistration/CompanyRegistration.css";
 
 function App() {
   const [data, setData] = React.useState("Отсканируйте штрих-код");
 
+  // const inputHelper = (event) => {
+  //   setLong(event.target.value);
+  //   setLat(event.target.value);
+  //   setName(event.target.value);
+  //   setAdress(event.target.value);
+  //   setLink(event.target.value);
+  //   setMaterial(event.target.value);
+  //   console.log(setLong, setLat);
+  // };
+
   return (
-    <div className="App">
+    <div>
+      <button
+        type="button"
+        className="btn btn-primary"
+        data-toggle="modal"
+        data-target="#exampleModalCenter"
+      >
+        +
+      </button>
+
+      <div
+        className="modal fade"
+        id="exampleModalCenter"
+        tabIndex="-1"
+        role="dialog"
+        aria-labelledby="exampleModalCenterTitle"
+        aria-hidden="true"
+      >
+        <div className="modal-dialog modal-dialog-centered" role="document">
+          <div className="modal-content">
+            <div className="modal-header">
+              <h5 className="modal-title" id="exampleModalLongTitle">
+                Введите данные
+              </h5>
+              <button
+                type="button"
+                className="close"
+                data-dismiss="modal"
+                aria-label="Close"
+              >
+                <span aria-hidden="true">&times;</span>
+              </button>
+            </div>
+            <div className="modal-body">
+              <CompanyRegistration />
+            </div>
+          </div>
+        </div>
+      </div>
       <Switch>
         <Route path="/blic">
           <Blic />
