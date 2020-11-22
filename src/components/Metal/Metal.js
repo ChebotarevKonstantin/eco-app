@@ -1,5 +1,6 @@
 import React from 'react';
 import FindAdress from '../FindAdress';
+import style from '../Text.module.css'
 
 
 function Metal() {
@@ -9,8 +10,11 @@ function Metal() {
     <div>
       <FindAdress props={props}/>
         <br/>
+        <div className={style.text}>
       Мотивация + инфо о вреде неутилизированного металла.
     </div>
+    </div>
+
   );
 }
 

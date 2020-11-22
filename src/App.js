@@ -3,30 +3,27 @@ import "./App.css";
 import BarcodeScannerComponent from "react-webcam-barcode-scanner";
 import Form from "./components/Form/Form";
 import { Route, Switch } from "react-router-dom";
-import CompanyRegistration from "./components/CompanyRegistration/CompanyRegistration";
 import BlicStart from "../src/components/BlicStart";
 import RouteCategory from "./components/RouteCategory";
-
 import AddButton from "./components/AddButton";
 
-import style from "./components/CompanyRegistration/CompanyRegistration.module.css";
 
 
 function App() {
   const [data, setData] = React.useState("Scan barcode");
 
   return (
-    <div>
+    <div  className='App'>
       <Switch>
         <Route exact path="/">
          <AddButton/>
-          <BarcodeScannerComponent
+          {/* <BarcodeScannerComponent
             width={"90%"}
             height={"50%"}
             onUpdate={(err, result) => {
               if (result) setData(result.text);
             }}
-          />
+          /> */}
           <BlicStart />
           <Form data={data} />
         </Route>

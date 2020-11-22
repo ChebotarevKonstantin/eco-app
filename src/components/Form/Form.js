@@ -42,6 +42,7 @@ export default function Form({ data }) {
 
   return (
     <div>
+      <div  style={{marginBottom: "10px"}}>
       <input
         id={style.input}
         className={style.inputName}
@@ -49,10 +50,12 @@ export default function Form({ data }) {
         ref={barcodeInput}
         type="text"
         readOnly
+        
       />
       <button type="button" className="btn btn-primary" onClick={clickHandler}>
         Отправить
       </button>
+      </div>
       {/*{!success ? <FindAdress places={places}/> : null}*/}
       {!success ? <Select data={data} /> : null}
       <div className={styles.flexfind}>

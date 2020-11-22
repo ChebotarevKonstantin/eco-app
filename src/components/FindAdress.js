@@ -29,11 +29,9 @@ function FindAdress(props) {
         Назад
       </button>
       <br />
-      Показываем на карте куда можно сдать.
-      {/* {adress && adress.map((item, i) => (<pre>{JSON.stringify(item, null, 2)}</pre>))} */}
-      <br />
-      Мотивация из FindAdress.
-      <div className={style.flexfind}>
+      Пункты приема.
+       <br />
+       <div className={style.flexfind}>
         <YMaps>
           <Map state={mapstate}>
             {adress &&
