@@ -1,13 +1,13 @@
 import React from 'react';
-import {useHistory} from 'react-router-dom'
-function Tetrapac(props) {
+import FindAdress from '../FindAdress';
 
-  const history = useHistory()
+function Tetrapac() {
+const props = {category:'category', material:'tetrapac'};
   return (
     <div>
-      <button type="button" className="btn btn-primary btn-sm" onClick={()=> history.push('/blic')}>Назад</button>
-      <br/>
-      
+      <FindAdress props={props}/>
+        <br/>
+      Мотивация + инфо о вреде неутилизированной Tetrapac.
     </div>
   );
 }

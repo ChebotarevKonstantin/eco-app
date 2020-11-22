@@ -1,18 +1,15 @@
-import React, { useCallback } from 'react';
-import {useHistory} from 'react-router-dom'
-function Tires(props) {
+import React from 'react';
+import FindAdress from '../FindAdress';
 
 
+function Tires() {
 
+const props = {category:'tyre', material:'rubber'};
 
-  
-  const history = useHistory()
   return (
     <div>
-      <button type="button" className="btn btn-primary btn-sm" onClick={()=> history.push('/blic')}>Назад</button>
-      <br/>
-      Показываем на карте куда можно сдать.
-      <br/>
+      <FindAdress props={props}/>
+        <br/>
       Мотивация + инфо о вреде неутилизированной шины.
     </div>
   );
