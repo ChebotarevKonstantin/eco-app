@@ -1,14 +1,13 @@
 import React from 'react';
-import {useHistory} from 'react-router-dom'
-function Lightbulbs(props) {
+import FindAdress from '../FindAdress';
 
-  const history = useHistory();
+function Lightbulbs() {
+const props = {category:'category', material:'lightbulbs'};
+
   return (
     <div>
-      <button type="button" className="btn btn-primary btn-sm" onClick={()=> history.push('/blic')}>Назад</button>
-      <br/>
-            Показываем на карте куда можно сдать.
-      <br/>
+           <FindAdress props={props}/>
+           <br/>
       Мотивация + инфо о вреде неутилизированной лампочки.
     </div>
   );

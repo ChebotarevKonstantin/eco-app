@@ -1,14 +1,13 @@
 import React from 'react';
-import {useHistory} from 'react-router-dom'
 
+import FindAdress from '../FindAdress';
 
-function Glassglassbreak(props) {
-  const history = useHistory();
+function Glassglassbreak() {
+const props = {category:'glassglassbreak', material:'glass'};
+
   return (
     <div>
-      <button type="button" className="btn btn-primary btn-sm" onClick={()=> history.push('/glass')}>Назад</button>
-    <br/>
-      
+           <FindAdress props={props}/>
     </div>
   );
 }
