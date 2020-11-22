@@ -1,14 +1,13 @@
 import React from 'react';
-import {useHistory} from 'react-router-dom'
+
+import FindAdress from '../FindAdress';
 
 
-function Hazardouswaste(props) {
-  const history = useHistory()
-
+function Hazardouswaste() {
+const props = {category:'category', material:'hazardouswaste'};
   return (
     <div>
-      <button type="button" className="btn btn-primary btn-sm" onClick={()=> history.push('/blic')}>Назад</button>
-    <br/>
+          <FindAdress props={props}/>
     </div>
   );
 }

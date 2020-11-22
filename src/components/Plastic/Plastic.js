@@ -8,7 +8,7 @@ function Plastic(props) {
     <button type="button" className="btn btn-primary btn-sm" onClick={()=> history.push('/blic')}>Назад</button>
     <br/>
     <button type="button" className="btn btn-primary btn-sm" onClick={()=> history.push('/plastic/flakon')}>Флакон</button>
-    <button type="button" className="btn btn-primary btn-sm" onClick={()=> history.push('/plastic/plasticbottel')}>Бутылки</button>
+    <button type="button" className="btn btn-primary btn-sm" onClick={()=> history.push('/plastic/plasticbottle')}>Бутылки</button>
     <button type="button" className="btn btn-primary btn-sm" onClick={()=> history.push('/plastic/styrofoam')}>Пенопласт</button>
       
     </div>

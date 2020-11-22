@@ -1,14 +1,15 @@
 import React from 'react';
-import {useHistory} from 'react-router-dom'
+import FindAdress from '../FindAdress';
 
 
-function Metal(props) {
-  const history = useHistory()
+function Metal() {
+  const props = {category:'category', material:'metal'};
+
   return (
     <div>
-    <button type="button" className="btn btn-primary btn-sm" onClick={()=> history.push('/blic')}>Назад</button>
-    <br/>
-      
+      <FindAdress props={props}/>
+        <br/>
+      Мотивация + инфо о вреде неутилизированной шины.
     </div>
   );
 }

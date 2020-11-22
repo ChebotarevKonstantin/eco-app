@@ -1,14 +1,17 @@
 import React from 'react';
-import {useHistory} from 'react-router-dom'
+import FindAdress from '../FindAdress';
 
-function Flakon(props) {
-  const history = useHistory()
+
+function Flakon() {
+
+const props = {category:'flakon', material:'plastic'};
+
   return (
     <div>
-    <button type="button" className="btn btn-primary btn-sm" onClick={()=> history.push('/plastic')}>Назад</button>
-    <br/>
-      
-    </div>
+    <FindAdress props={props}/>
+      <br/>
+    Мотивация + инфо о вреде неутилизированноь пластике.
+  </div>
   );
 }
 
