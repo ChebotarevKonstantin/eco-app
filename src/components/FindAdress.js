@@ -7,6 +7,7 @@ import style from "./FindAdress.module.css";
 
 function FindAdress(props) {
   const dispatch = useDispatch();
+
   const adress = useSelector((store) => store.adress);
   useEffect(() => {
     dispatch(featchFindAC(props.props));
@@ -44,6 +45,7 @@ function FindAdress(props) {
         </YMaps>
       </div>
     </div>
+
   );
 }
 

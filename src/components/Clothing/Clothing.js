@@ -8,6 +8,8 @@ const props = {category:'category', material:'clothing'};
   return (
     <div>
           <FindAdress props={props}/>
+          <br/>
+      <p4>Спасибо!</p4>
     </div>
   );
 }
