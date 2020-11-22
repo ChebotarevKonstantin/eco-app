@@ -1,21 +1,15 @@
 import React from "react";
 import "./App.css";
 import BarcodeScannerComponent from "react-webcam-barcode-scanner";
-
-import { Route, Switch } from "react-router-dom";
 import Form from "./components/Form/Form";
+import { Route, Switch } from "react-router-dom";
 import CompanyRegistration from "./components/CompanyRegistration/CompanyRegistration";
-import "./components/CompanyRegistration/CompanyRegistration.css";
-
-import {Switch, Route} from 'react-router-dom'
-import BlicStart from '../src/components/BlicStart'
+import BlicStart from "../src/components/BlicStart";
 import RouteCategory from "./components/RouteCategory";
-
+import style from "./components/CompanyRegistration/CompanyRegistration.module.css";
 
 function App() {
-  const [data, setData] = React.useState("Отсканируйте штрих-код");
-
-
+  const [data, setData] = React.useState("Scan barcode");
 
   return (
     <div>
@@ -24,10 +18,11 @@ function App() {
         className="btn btn-primary"
         data-toggle="modal"
         data-target="#exampleModalCenter"
+        id={style.company}
+        title="Add company"
       >
         +
       </button>
-
 
       <div
         className="modal fade"
@@ -59,26 +54,24 @@ function App() {
         </div>
       </div>
 
-    <Switch>
-       <Route exact path='/'>
-           {/* <BarcodeScannerComponent
-           width={500}
-           height={500}
-           onUpdate={(err, result) => {
-           if (result) setData(result.text)
-           }}
-           /> */}
-           <p>{data}</p>
-           <BlicStart />
-       </Route>
-       <Route path='/'>
-          <RouteCategory/>
-       </Route>  
-    </Switch>
-
+      <Switch>
+        <Route exact path="/">
+          <BarcodeScannerComponent
+            width={"90%"}
+            height={"50%"}
+            onUpdate={(err, result) => {
+              if (result) setData(result.text);
+            }}
+          />
+          <BlicStart />
+          <Form data={data} />
+        </Route>
+        <Route path="/">
+          <RouteCategory />
+        </Route>
+      </Switch>
     </div>
   );
 }
 
 export default App;
-
